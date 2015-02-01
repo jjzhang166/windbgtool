@@ -30,7 +30,7 @@ STDMETHODIMP CConsoleService::OpenConsole()
 		return S_OK;
 
 	CComPtr<IControl> pControl;
-	RETURN_IF_FAILED(pFormManager->OpenForm(CONTROL_LOG, &pControl));
+	RETURN_IF_FAILED(pFormManager->OpenForm2(PNAMESP_HOSTFORM, PVIEWTYPE_INPLACE_CONTROL, CONTROL_LOG, &pControl));
 	return S_OK;
 }
 

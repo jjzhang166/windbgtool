@@ -49,9 +49,11 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		CComPtr<IMainWindow> pWindow;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_MainFrame, IID_IMainWindow, (LPVOID*)&pWindow));
 
-		CComPtr<ITabbedControl> pTabbedControl;
-		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_TabbedControl, IID_ITabbedControl, (LPVOID*)&pTabbedControl));
-		RETURN_IF_FAILED(pWindow->SetContainerControl(pTabbedControl));
+		CComPtr<IUnknown> pUnk2;
+		RETURN_IF_FAILED(pPluginManager->CreatePluginInstance(PNAMESP_HOSTFORM, PVIEWTYPE_CONTAINERWINDOW, CONTROL_TABCONTAINER, &pUnk2));
+		CComQIPtr<IContainerControl> pContainerWindow = pUnk2;
+
+		RETURN_IF_FAILED(pWindow->SetContainerControl(pContainerWindow));
 
 		CIcon icon;
 		icon.LoadIcon(IDR_MAINFRAME);
@@ -85,12 +87,6 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 			ATLTRACE(_T("Main window creation failed!\n"));
 			return 0;
 		}
-
-		CComPtr<IUnknown> pUnk2;
-		RETURN_IF_FAILED(pPluginManager->CreatePluginInstance(PNAMESP_HOSTFORM, PVIEWTYPE_CONTAINERWINDOW, CONTROL_TABCONTAINER, &pUnk2));
-		CComQIPtr<IContainerControl> pContainerWindow = pUnk2;
-
-		RETURN_IF_FAILED(pWindow->SetContainerControl(pContainerWindow));
 
 		CComQIPtr<IControl> pTabControl = pContainerWindow;
 

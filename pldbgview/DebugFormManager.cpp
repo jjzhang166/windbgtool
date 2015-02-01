@@ -30,7 +30,7 @@ STDMETHODIMP CDebugFormManager::OnAfterCommandExecute(REFGUID guidCommandId, VAR
 	CComPtr<IFormManager> pFormManager;
 	RETURN_IF_FAILED(m_pServiceProvider->QueryService(SERVICE_FORM_MANAGER, IID_IFormManager, (LPVOID*)&pFormManager));
 	CComPtr<IControl> pControl;
-	RETURN_IF_FAILED(pFormManager->OpenForm(guidCommandId, &pControl));
+	RETURN_IF_FAILED(pFormManager->OpenForm2(PNAMESP_HOSTFORM, PVIEWTYPE_INPLACE_CONTROL, guidCommandId, &pControl));
 
 	CComQIPtr<IInitializeWithVariantObject> pInitializeWithVariantObject = pControl;
 	ATLASSERT(pInitializeWithVariantObject);
