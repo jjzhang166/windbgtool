@@ -1,0 +1,61 @@
+// pldbgcmds.idl : IDL source for pldbgcmds
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (pldbgcmds.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\DbgEngine\dbgengine_contract_i.idl";
+import "pldbgcmds_contract_i.idl";
+
+interface IPluginTable;
+
+[
+	uuid(188F659C-88C7-4499-AAFE-F70BF81D3B94),
+	version(1.0),
+]
+library pldbgcmdsLib
+{
+	importlib("stdole2.tlb");
+
+	[
+		uuid(6EA78630-DC6D-4D2B-91F0-686B260F29D6)		
+	]
+	coclass PluginTable
+	{
+		[default] interface IPluginTable;
+	};
+	[
+		uuid(FFE7531D-9BC1-4970-ABCE-4816E3CABC63)		
+	]
+	coclass PluginDebugCommand
+	{
+		[default] interface IPluginDebugCommand;
+		interface IInitializeWithPluginInfo;
+	};
+	[
+		uuid(8777BCA7-8EF6-409E-BCFD-6F297FCDF52C)		
+	]
+	coclass EmptyParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(3514E5B2-197B-44F4-B448-D48CEFC7425C)		
+	]
+	coclass DebugSessionService
+	{
+		[default] interface IDebugSessionService;
+	};
+	[
+		uuid(313E97FD-DFD6-477C-B5FF-19744A55BB14)
+	]
+	coclass OpenDumpDebugCommand
+	{
+		[default] interface IPluginDebugCommand;
+	};
+};
+
+import "shobjidl.idl";

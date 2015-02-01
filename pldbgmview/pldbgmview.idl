@@ -1,0 +1,94 @@
+// pldbgmview.idl : IDL source for pldbgmview
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (pldbgmview.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\DbgEngine\dbgengine_contract_i.idl";
+import "..\ViewMdl\viewmdl_contract_i.idl";
+import "..\pldbgcmds\pldbgcmds_contract_i.idl";
+import "..\pldbgview\pldbgview_contract_i.idl";
+
+[
+	uuid(084F4C74-85D5-4B16-B506-3E99BB630413),
+	version(1.0),
+]
+library pldbgmviewLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6EA78630-DC6D-4D2B-91F0-686B260F29D6)		
+	]
+	coclass PluginTable
+	{
+		[default] interface IPluginTable;
+	};
+	[
+		uuid(CF01302D-D773-400E-BB9A-29BC16847745)		
+	]
+	coclass DotNetInfoCommand
+	{
+		[default] interface ICommand2;
+	};
+	[
+		uuid(34A07E41-D297-4B0A-B7CC-22157D6E2719)		
+	]
+	coclass HeapStatCommand
+	{
+		[default] interface ICommand2;
+	};
+	[
+		uuid(5C287D0D-9FB4-40CA-A5F7-FDF03693F76D)		
+	]
+	coclass LoadCLRCommand
+	{
+		[default] interface ICommand2;
+	};
+	[
+		uuid(7839F858-C9F9-41B8-AE14-4F1BD73FA730)		
+	]
+	coclass HeapStatViewCommands
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(E89AE6B7-AAA3-43B6-B112-AB01C2CDA0FD)		
+	]
+	coclass ObjectsViewCommands
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(2B3CF4CD-3B5C-49FC-ACA3-AECBF61CE3D1)		
+	]
+	coclass CommandsCommand
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(ADAED689-9E78-47F5-87FA-AB10201907C5)		
+	]
+	coclass ThreadsCommand
+	{
+		[default] interface ICommand2;
+	};
+	[
+		uuid(A6B31236-A02C-4473-8BFC-EA4D2689AB87)		
+	]
+	coclass CommandStateService
+	{
+		[default] interface IPluginSupportNotifications;
+	};
+	[
+		uuid(DFED2F6E-4182-494A-BAF7-8650EB01C4B3)
+	]
+	coclass ViewDebugEngineInitializerService
+	{
+		[default] interface IPluginSupportNotifications;
+	};
+};
+
+import "shobjidl.idl";

@@ -1,0 +1,66 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\DbgEngine\dbgengine_contract_i.idl";
+
+[
+	object,
+	uuid(EE986C2F-BE51-4DCA-AF8A-5710147AF184),
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICommandResultParser : IUnknown
+{
+	HRESULT Parse(VARIANT* v, IVariantObject** ppVariantObject);
+};
+
+[
+	object,
+	uuid(1F673DCC-EA51-4430-AC42-3B6455EE2C33),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IPluginDebugCommand : IUnknown
+{
+	HRESULT SetDebugSession(IDebugSession* pDebugSession);
+	HRESULT Execute(VARIANT* vParam, IVariantObject** ppVariantObject);
+};
+
+[
+	object,
+	uuid(5A2DF505-F69A-488C-8C58-A562BB4D7A36),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugSessionService : IUnknown
+{
+	HRESULT OpenSession();
+	HRESULT CloseSession();
+	HRESULT OpenDumpFile(BSTR bstrDumpFile);
+	HRESULT CloseDumpFile();
+	HRESULT GetSession(IDebugSession** ppDebugSession);
+	HRESULT LoadDll(LPCTSTR lpszDllName);
+	HRESULT ExecuteCommandSimple(REFIID iidCommand, VARIANT* vParam, IVariantObject** ppVariantObject);
+};
+
+[
+	object,
+	uuid(4F782079-FD88-4B93-87FF-9F631B9A3A19),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IInitializeWithDebugSessionService : IUnknown
+{
+	HRESULT SetDebugSessionService(IDebugSessionService* pDebugSessionService);
+};
+
+[
+	object,
+	uuid(DA5F9E90-5F65-442A-9A82-5DBD7A529313),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugSessionServiceEvents : IUnknown
+{
+	HRESULT OnBeforeCommandExecute(REFGUID guidCommandId, VARIANT* vParam);
+	HRESULT OnAfterCommandExecute(REFGUID guidCommandId, VARIANT* vParam, IVariantObject* pResult);
+};

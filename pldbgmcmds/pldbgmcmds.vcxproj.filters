@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Parsers">
+      <UniqueIdentifier>{e78b6b73-8ce1-4200-98db-992f185f4b5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parsers\DotNetInfo">
+      <UniqueIdentifier>{20c2a599-7b30-4bcf-af05-a5a0797a7b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parsers\ObjectProps">
+      <UniqueIdentifier>{e8000cd2-e514-41e5-aed9-beb27fbdaaea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parsers\Objects">
+      <UniqueIdentifier>{3a1033cc-811a-4a09-b398-7b7d82f33a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parsers\ObjectValues">
+      <UniqueIdentifier>{07b5c395-ba49-45fc-9ca6-3925680848ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parsers\HeapStat">
+      <UniqueIdentifier>{67456eb2-238b-4535-8533-33afff4b2237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{3ca1021d-cd1a-4051-98ce-e7d1169a3073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{385c78e0-42bd-4b9f-9a78-539dbaae17d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc\Generated Files">
+      <UniqueIdentifier>{86202fac-2476-4420-8f3b-a2bb2db10ff6}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Misc\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Misc\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Misc\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Parsers\Threads">
+      <UniqueIdentifier>{d8d1e5ed-0a14-4788-b5e9-c5ff80804c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{9ebbb695-5512-4ef0-82fd-eff90ba1115e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgmcmds.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdlldata.c">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgmcmds_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginTable.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DotNetInfoParser.cpp">
+      <Filter>Parsers\DotNetInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="HeapStatParser.cpp">
+      <Filter>Parsers\HeapStat</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPropsParser.cpp">
+      <Filter>Parsers\ObjectProps</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectsParser.cpp">
+      <Filter>Parsers\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectValuesParser.cpp">
+      <Filter>Parsers\ObjectValues</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadsParser.cpp">
+      <Filter>Parsers\Threads</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagedDebugSessionService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="dbgengine_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objmdl_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgcmds_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdlldata.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgmcmds_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginTable.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DotNetInfoParser.h">
+      <Filter>Parsers\DotNetInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapStatParser.h">
+      <Filter>Parsers\HeapStat</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPropsParser.h">
+      <Filter>Parsers\ObjectProps</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectsParser.h">
+      <Filter>Parsers\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectValuesParser.h">
+      <Filter>Parsers\ObjectValues</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadsParser.h">
+      <Filter>Parsers\Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagedDebugSessionService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="dbgengine_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objmdl_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgcmds_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pldbgmcmds.rc">
+      <Filter>Misc\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pldbgmcmds.def">
+      <Filter>Misc\Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="pldbgmcmds.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\pldbgcmds\pldbgcmds_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

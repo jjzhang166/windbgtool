@@ -1,0 +1,101 @@
+// pldbgview.idl : IDL source for pldbgview
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (pldbgview.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\DbgEngine\dbgengine_contract_i.idl";
+import "..\ViewMdl\viewmdl_contract_i.idl";
+import "..\pldbgcmds\pldbgcmds_contract_i.idl";
+import "pldbgview_contract_i.idl";
+
+[
+	uuid(F65AF06E-B2C1-4292-A522-AC1F2EF57A65),
+	version(1.0),
+]
+library pldbgviewLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6EA78630-DC6D-4D2B-91F0-686B260F29D6)		
+	]
+	coclass PluginTable
+	{
+		[default] interface IPluginTable;
+	};
+	[
+		uuid(BF4664F0-65EC-4F00-B3E3-82C550D1123F)		
+	]
+	coclass DebugFormManager
+	{
+		[default] interface IDebugFormManager;
+	};
+	[
+		uuid(FCC9AC6D-B1A4-4EB6-9D50-01B9B400590C)		
+	]
+	coclass ViewDebugEngineService
+	{
+		[default] interface IViewDebugEngineService;
+	};
+	[
+		uuid(977640C3-989D-4338-BE01-5FDD432EE27B)		
+	]
+	coclass OpenDumpCommand
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(37C2DEAC-D770-4F5A-92CC-C2ED76E01BDA)		
+	]
+	coclass ShowLogCommand
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(354A8E9E-C83B-4BD5-B09E-2D1403A52ADD)
+	]
+	coclass CloseDumpCommand
+	{
+		[default] interface ICommand;
+	};
+	[
+		uuid(650706A5-7B5C-4972-8A28-5074A99A91E2)		
+	]
+	coclass LogFormView
+	{
+		[default] interface ILogFormView;
+	};
+	[
+		uuid(A6FFFD5A-5C8A-4593-B08D-9D11794268AA)		
+	]
+	coclass LoadDllCommand
+	{
+		[default] interface ICommand2;
+	};
+	[
+		uuid(2A36439E-55F2-4C4D-8671-015D088994E5)		
+	]
+	coclass ProgressBarService
+	{
+		[default] interface IPluginSupportNotifications;
+	};
+	[
+		uuid(DAE54008-D81C-4718-A61A-456270C3596E)		
+	]
+	coclass ConsoleService
+	{
+		[default] interface IConsoleService;
+	};
+	[
+		uuid(6A0C1969-BAED-4ECB-99B8-753AC1B1727A)
+	]
+	coclass CommandErrorHandlingService
+	{
+		[default] interface IPluginSupportNotifications;
+	};
+};
+
+import "shobjidl.idl";

@@ -1,0 +1,28 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(A14FF018-EDF6-4AA1-8753-3534FB7C7A70),
+	version(1.0),
+]
+library WinDbgUITestLib
+{
+	import "..\ViewMdl\viewmdl_contract_i.idl";
+	importlib("stdole2.tlb");
+
+	[
+		uuid(27F47667-CF6D-4556-B4E7-0B3E083BA52E)		
+	]
+	coclass MessageLoopWrapper
+	{
+		[default] interface IMessageLoop;
+	};
+
+	[
+		uuid(FF5BC832-9804-44AF-967C-687899119062)		
+	]
+	coclass MainFrmView
+	{
+		[default] interface IMessageLoop;
+	};
+}

@@ -1,0 +1,63 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "ObjectArray.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+
+interface IVariantObject;
+interface IDebugCommand;
+
+[
+	object,
+	uuid(F58D7686-2901-48EF-9F73-7389C1AE8126),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugOutputCallback : IUnknown
+{
+	HRESULT Output(ULONG Mask, LPCTSTR Text);
+}
+
+[
+	object,
+	uuid(C177F38F-FA51-4D70-9971-9FA728A35C0A),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugSession : IUnknown
+{
+	HRESULT Open();
+	HRESULT Close();
+    HRESULT OpenDumpFile(LPCTSTR dumpFilePath);
+	HRESULT CloseDumpFile();
+	HRESULT CreateCommand(IDebugCommand** pCmd);
+	HRESULT AddOutputCallback(IDebugOutputCallback* pCallback);
+	HRESULT RemoveOutputCallback(IDebugOutputCallback* pCallback);
+	HRESULT Execute(ULONG OutputControl, LPCTSTR lpszCommandText, ULONG Flags);
+};
+
+[
+	object,
+	uuid(85AEA4CD-A86C-4887-9BA5-E2C8EDD915A6),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugCommand : IUnknown
+{
+	HRESULT SetDebugSession(IDebugSession* pDebugSession);
+	HRESULT SetCommandText(BSTR bstrCmdText);
+	HRESULT Execute(VARIANT* vParam, VARIANT* vResult);
+};
+
+[
+	object,
+	uuid(EF54B4C5-D1BD-4ECE-A836-5FAB8E3E4590),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugEngine : IUnknown
+{
+	HRESULT OpenSession(IDebugSession** pSession);
+};

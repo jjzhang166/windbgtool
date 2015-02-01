@@ -1,0 +1,59 @@
+// DbgEngine.idl : IDL source for DbgEngine
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DbgEngine.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "dbgengine_contract_i.idl";
+
+[
+	uuid(86A7D211-8850-4FC1-A875-CFB7208D241A),
+	version(1.0),
+]
+library DbgEngineLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(CA266D3E-DA9E-4EF6-B543-7A115408B2AE)		
+	]
+	dispinterface _IDebugEngineEvents
+	{
+		properties:
+		methods:
+			[id(1)] HRESULT OnIdle();
+	};
+	[
+		uuid(0A68B25D-0A01-42CF-97BB-C58CCB2F8B9D)		
+	]
+	coclass DebugEngine
+	{
+		[default] interface IDebugEngine;
+		[default, source] dispinterface _IDebugEngineEvents;
+	};
+	[
+		uuid(27AB7C14-4951-426A-9F4D-F618BE3CEF76)		
+	]
+	coclass DebugSession
+	{
+		[default] interface IDebugSession;
+	};
+	[
+		uuid(F18CF3CD-4239-48AD-8C59-FD1E3D400261)		
+	]
+	coclass DebugCommand
+	{
+		[default] interface IDebugCommand;
+	};
+	importlib("stdole2.tlb");
+	[
+		uuid(6EA78630-DC6D-4D2B-91F0-686B260F29D6)		
+	]
+	coclass PluginTable
+	{
+		[default] interface IPluginTable;
+	};
+};
+
+import "shobjidl.idl";

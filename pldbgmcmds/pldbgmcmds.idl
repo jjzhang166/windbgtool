@@ -1,0 +1,85 @@
+// pldbgmcmds.idl : IDL source for pldbgmcmds
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (pldbgmcmds.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\DbgEngine\dbgengine_contract_i.idl";
+import "..\pldbgcmds\pldbgcmds_contract_i.idl";
+
+[
+	uuid(3D68BBB6-87FE-4185-8D09-64EAFAFA3F38),
+	version(1.0),
+]
+library pldbgmcmdsLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6EA78630-DC6D-4D2B-91F0-686B260F29D6)		
+	]
+	coclass PluginTable
+	{
+		[default] interface IPluginTable;
+	};
+	[
+		uuid(AAFB34CC-1605-4515-9273-13188CDE1C1B)		
+	]
+	coclass DotNetInfoParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(6E45136D-47BE-4C99-A96F-14305FB74B98)		
+	]
+	coclass HeapStatParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(7E71133B-818B-49BF-9D5C-90B0354723DA)		
+	]
+	coclass PluginLoadClrCommand
+	{
+		[default] interface IPluginDebugCommand;
+	};
+	[
+		uuid(4FCB8ACA-B7F3-4AFA-83C6-3E8EBEAD4885)		
+	]
+	coclass ObjectPropsParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(503614FF-5AA2-488E-9274-A0C2BC42E975)		
+	]
+	coclass ObjectValuesParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(82AA875B-1E87-43C7-9684-625E784113DD)		
+	]
+	coclass ObjectsParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(E44CF1FB-D1A8-4EC8-9944-1921CEF52569)		
+	]
+	coclass ThreadsParser
+	{
+		[default] interface ICommandResultParser;
+	};
+	[
+		uuid(B2B96417-20CC-4677-8058-9D3CC1D0D2F5)
+	]
+	coclass ManagedDebugSessionService
+	{
+		[default] interface IDebugSessionServiceEvents;
+	};
+};
+
+import "shobjidl.idl";

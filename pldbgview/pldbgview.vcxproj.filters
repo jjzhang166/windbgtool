@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{231a8474-6a4f-4dbd-84ce-3ae423d80147}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{0c1eee36-80b3-4284-84c5-35f695bf429a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{ffe28209-c5c6-49ef-88b3-9fb01ad37fbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\DebugFormManager">
+      <UniqueIdentifier>{73352132-953a-4aef-baaf-e4440fbca9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{ebba37fa-2114-44e5-b02c-e60c94c3ec4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{051133b6-7472-41e1-a405-51e06738437b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Log">
+      <UniqueIdentifier>{b3d69912-16f4-4912-b8bf-3eab14978f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\ViewDebugEngineService">
+      <UniqueIdentifier>{2447d11c-df57-4db3-9bdc-91c50f1da869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Log\Controls">
+      <UniqueIdentifier>{e0e35221-929c-46aa-b2a5-62879d900d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\ProgressBarService">
+      <UniqueIdentifier>{3ddd3d54-6956-413f-9bf2-c8474dc6c0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\ConsoleService">
+      <UniqueIdentifier>{922d4cf9-14ac-423c-a3ed-f3aedf133f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\CommandErrorHandlingService">
+      <UniqueIdentifier>{f0d793e0-8525-4633-a252-c1d127bf022a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgview_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugFormManager.cpp">
+      <Filter>Services\DebugFormManager</Filter>
+    </ClCompile>
+    <ClCompile Include="LogFormView.cpp">
+      <Filter>Views\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenDumpCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowLogCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewDebugEngineService.cpp">
+      <Filter>Services\ViewDebugEngineService</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBarService.cpp">
+      <Filter>Services\ProgressBarService</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleService.cpp">
+      <Filter>Services\ConsoleService</Filter>
+    </ClCompile>
+    <ClCompile Include="CloseDumpCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandErrorHandlingService.cpp">
+      <Filter>Services\CommandErrorHandlingService</Filter>
+    </ClCompile>
+    <ClCompile Include="dbgengine_contract_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objmdl_contract_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgcmds_contract_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgview_contract_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="viewmdl_contract_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgview_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugFormManager.h">
+      <Filter>Services\DebugFormManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenDumpCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowLogCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LogFormView.h">
+      <Filter>Views\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewDebugEngineService.h">
+      <Filter>Services\ViewDebugEngineService</Filter>
+    </ClInclude>
+    <ClInclude Include="EditEx.h">
+      <Filter>Views\Log\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewDebugEngineServiceEventSink.h">
+      <Filter>Services\ViewDebugEngineService</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBarService.h">
+      <Filter>Services\ProgressBarService</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleService.h">
+      <Filter>Services\ConsoleService</Filter>
+    </ClInclude>
+    <ClInclude Include="CloseDumpCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandContext.h">
+      <Filter>Services\ViewDebugEngineService</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandErrorHandlingService.h">
+      <Filter>Services\CommandErrorHandlingService</Filter>
+    </ClInclude>
+    <ClInclude Include="dbgengine_contract_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objmdl_contract_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgcmds_contract_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgview_contract_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="viewmdl_contract_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pldbgview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pldbgview.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="pldbgview.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="pldbgview_contract_i.idl">
+      <Filter>Include</Filter>
+    </Midl>
+    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="..\ViewMdl\viewmdl_contract_i.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="..\pldbgcmds\pldbgcmds_contract_i.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\AlignTableCellMiddleCenterHS.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\openHS.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

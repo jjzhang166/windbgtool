@@ -1,0 +1,82 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\pldbgcmds\pldbgcmds_contract_i.idl";
+
+interface IDebugSession;
+
+[
+	object,
+	uuid(295C5351-F622-4CDB-A8BA-1CAE9C487764),
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICommandWithParameter : IUnknown
+{
+	HRESULT InvokeCommand(VARIANT* vParam);
+};
+
+
+[
+	object,
+	uuid(E0B85647-9403-4809-8637-C30B5C5544E5),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDebugFormManager : IUnknown
+{
+	HRESULT OpenForm(REFGUID guidCommandId, VARIANT* vParam);
+};
+
+[
+	object,
+	uuid(66371BE1-1A51-4B31-9583-467ECD285416),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IViewDebugEngineServiceEvents : IUnknown
+{
+	HRESULT OnBeforeCommandExecute(REFGUID guidCommandId, VARIANT* vParam);
+	HRESULT OnAfterCommandExecute(REFGUID guidCommandId, VARIANT* vParam, IVariantObject* pResult);
+};
+
+[
+	object,
+	uuid(53D0D6C7-35DC-469C-A296-585A670F72CD),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IViewDebugEngineService : IUnknown
+{
+	HRESULT OpenSession();
+	HRESULT CloseSession();
+	HRESULT OpenDumpFile(BSTR bstrDumpFile);
+	HRESULT CloseDumpFile();
+	HRESULT ExecuteCommandSimpleAsync(REFIID iidCommand, VARIANT* vParam);
+	HRESULT ExecuteCommandAsync(IDebugCommand* pDebugCommand);
+	HRESULT GetLastError();
+};
+
+[
+	object,
+	uuid(9721D282-FEF9-4A3B-92A7-94EA9A7ADE9E),
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILogFormView : IUnknown
+{
+	HRESULT WriteLine(BSTR bstr);
+};
+
+[
+	object,
+	uuid(C8BAE6CE-530E-48D9-B39B-47B580BDB538),
+	nonextensible,
+	pointer_default(unique)
+]
+interface IConsoleService : IUnknown
+{
+	HRESULT OpenConsole();
+	HRESULT IsOpened(BOOL* pbOpened);
+	HRESULT WriteLine(BSTR bstr);
+};

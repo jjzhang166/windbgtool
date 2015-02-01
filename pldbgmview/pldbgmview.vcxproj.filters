@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{1d5849a4-365f-47c3-88c2-7ac768f5386b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\HeapStatViewCommands">
+      <UniqueIdentifier>{4b0c7f78-1df8-4943-a121-f1e69e0817ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\ObjectsViewCommands">
+      <UniqueIdentifier>{98a26c3b-7783-4431-b13b-0ffc16e269be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{d4dedb0e-2f15-4d0c-a804-0bf262aca9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{f3051998-fdc8-47a8-a502-93c8a80a582e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc\Generated Files">
+      <UniqueIdentifier>{875b0b59-729c-4110-9d41-0ee2db5916dd}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Misc\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Misc\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Misc\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Service">
+      <UniqueIdentifier>{0f68902d-631e-4402-9b3f-dd974caa9a5f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgmview.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdlldata.c">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgmview_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HeapStatViewCommands.cpp">
+      <Filter>Commands\HeapStatViewCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectsViewCommands.cpp">
+      <Filter>Commands\ObjectsViewCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="DotNetInfoCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="HeapStatCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginTable.cpp">
+      <Filter>Misc\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandsCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadsCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandStateService.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="dbgengine_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objmdl_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgcmds_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pldbgview_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="viewmdl_contract_i.c">
+      <Filter>Misc\Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdlldata.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgmview_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapStatViewCommands.h">
+      <Filter>Commands\HeapStatViewCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectsViewCommands.h">
+      <Filter>Commands\ObjectsViewCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="DotNetInfoCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapStatCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginTable.h">
+      <Filter>Misc\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandsCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadsCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandStateService.h">
+      <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="dbgengine_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objmdl_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgcmds_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pldbgview_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="viewmdl_contract_i.h">
+      <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pldbgmview.rc">
+      <Filter>Misc\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pldbgmview.def">
+      <Filter>Misc\Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="pldbgmview.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\ViewMdl\viewmdl_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\pldbgcmds\pldbgcmds_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\pldbgview\pldbgview_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
