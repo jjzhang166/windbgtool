@@ -20,8 +20,8 @@ STDMETHODIMP CObjectPropsParser::Parse(VARIANT *v, IVariantObject** ppVariantObj
 	RETURN_IF_FAILED(HrAddColumn(pPluginManager, pVariantObject, VAR_KEY, L"Property"));
 	RETURN_IF_FAILED(HrAddColumn(pPluginManager, pVariantObject, VAR_VALUE, L"Value"));
 
-	CComPtr<IObjectCollection> pObjectCollection;
-	RETURN_IF_FAILED(CoCreateInstance(CLSID_EnumerableObjectCollection, NULL, CLSCTX_INPROC_SERVER, IID_IObjectCollection, (LPVOID*)&pObjectCollection));
+	CComPtr<IObjCollection> pObjectCollection;
+	RETURN_IF_FAILED(HrCoCreateInstance(CLSID_ObjectCollection, &pObjectCollection));
 	
 	CComBSTR bstrResult = v->bstrVal;
 	CString strResult = bstrResult;
@@ -56,7 +56,7 @@ STDMETHODIMP CObjectPropsParser::Parse(VARIANT *v, IVariantObject** ppVariantObj
 	CComPtr<IVariantTable> pVariantTable;
 	RETURN_IF_FAILED(HrWrapToVariantTable(pPluginManager, pVariantObject, pObjectCollection, &pVariantTable));
 	CComVariant vObjects(pVariantTable);
-	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_OBJECTS, &vObjects));
+	RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ObjectsObject, &vObjects));
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_RESULT, v));
 	return S_OK;
 }

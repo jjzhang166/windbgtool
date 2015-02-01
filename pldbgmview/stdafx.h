@@ -40,14 +40,17 @@
 using namespace ATL;
 
 #include <initguid.h>
-#include "..\ObjMdl\Macros.h"
-#include "..\ObjMdl\Plugins.h"
-#include "..\ObjMdl\Functions.h"
-#include "..\ViewMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Macros.h"
+#include "..\model-libs\ObjMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Metadata.h"
+#include "..\model-libs\ViewMdl\Plugins.h"
 #include "..\DbgEngine\Plugins.h"
 #include "..\pldbgview\Plugins.h"
 #include "..\pldbgcmds\Plugins.h"
 #include "..\pldbgmcmds\Plugins.h"
 #include "Plugins.h"
-#include "..\ViewMdl\\IInitializeWithControlImpl.h"
-#include "..\ObjMdl\GUIDComparer.h"
+#include "..\model-libs\ViewMdl\\IInitializeWithControlImpl.h"
+#include "..\model-libs\ObjMdl\GUIDComparer.h"
+
+using namespace IP;

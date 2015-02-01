@@ -171,12 +171,6 @@
     <Midl Include="pldbgmview.idl">
       <Filter>Misc\Source Files</Filter>
     </Midl>
-    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
-      <Filter>Misc\Source Files</Filter>
-    </Midl>
-    <Midl Include="..\ViewMdl\viewmdl_contract_i.idl">
-      <Filter>Misc\Source Files</Filter>
-    </Midl>
     <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
       <Filter>Misc\Source Files</Filter>
     </Midl>
@@ -184,6 +178,12 @@
       <Filter>Misc\Source Files</Filter>
     </Midl>
     <Midl Include="..\pldbgview\pldbgview_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\model-libs\ObjMdl\objmdl_contract_i.idl">
+      <Filter>Misc\Source Files</Filter>
+    </Midl>
+    <Midl Include="..\model-libs\ViewMdl\viewmdl_contract_i.idl">
       <Filter>Misc\Source Files</Filter>
     </Midl>
   </ItemGroup>

@@ -60,7 +60,7 @@ public:
 			return E_NOINTERFACE;
 
 		CComVariant vParam;
-		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(VAR_ID, &vParam));
+		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(ObjectModel::Metadata::Object::Id, &vParam));
 
 		if (guidId == CMD_GCROOT)
 		{

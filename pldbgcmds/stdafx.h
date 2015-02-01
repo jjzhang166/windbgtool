@@ -35,11 +35,13 @@
 
 #include <initguid.h>
 
-#include "..\ObjMdl\Macros.h"
-#include "..\ObjMdl\Plugins.h"
-#include "..\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Macros.h"
+#include "..\model-libs\ObjMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Metadata.h"
 #include "..\DbgEngine\Plugins.h"
 
 #include "Plugins.h"
 #include "PluginTable.h"
 
+using namespace IP;

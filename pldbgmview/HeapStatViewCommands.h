@@ -64,7 +64,7 @@ public:
 			return E_NOTIMPL;
 
 		CComVariant vParam;
-		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(VAR_ID, &vParam));
+		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(ObjectModel::Metadata::Object::Id, &vParam));
 
 		CComPtr<IDebugFormManager> pDebugFormManager;
 		RETURN_IF_FAILED(pServiceProvider->QueryService(SERVICE_DEBUG_FORM_MANAGER, IID_IDebugFormManager, (LPVOID*)&pDebugFormManager));

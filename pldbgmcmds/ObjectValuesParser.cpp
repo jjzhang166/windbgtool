@@ -23,11 +23,11 @@ STDMETHODIMP CObjectValuesParser::Parse(VARIANT *v, IVariantObject** ppVariantOb
 	HrAddColumn(pPluginManager, pVariantObject, VAR_TYPE, L"Type");
 	HrAddColumn(pPluginManager, pVariantObject, VAR_VT, L"VT");
 	HrAddColumn(pPluginManager, pVariantObject, VAR_ATTR, L"Attr");
-	HrAddColumn(pPluginManager, pVariantObject, VAR_ID, L"Value");
+	HrAddColumn(pPluginManager, pVariantObject, ObjectModel::Metadata::Object::Id, L"Value");
 	HrAddColumn(pPluginManager, pVariantObject, VAR_NAME, L"Name");
 
-	CComPtr<IObjectCollection> pObjectCollection;
-	RETURN_IF_FAILED(CoCreateInstance(CLSID_EnumerableObjectCollection, NULL, CLSCTX_INPROC_SERVER, IID_IObjectCollection, (LPVOID*)&pObjectCollection));
+	CComPtr<IObjCollection> pObjectCollection;
+	RETURN_IF_FAILED(HrCoCreateInstance(CLSID_ObjectCollection, &pObjectCollection));
 
 	CComBSTR bstrResult = v->bstrVal;
 	CString strResult = bstrResult;
@@ -76,7 +76,7 @@ STDMETHODIMP CObjectValuesParser::Parse(VARIANT *v, IVariantObject** ppVariantOb
 		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_TYPE, &CComVariant(strType.c_str())));
 		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_VT, &CComVariant(strVt.c_str())));
 		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_ATTR, &CComVariant(strAttr.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_ID, &CComVariant(strValue.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVariant(strValue.c_str())));
 		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_NAME, &CComVariant(strName.c_str())));
 
 		RETURN_IF_FAILED(pObjectCollection->AddObject(pVariantObjectValue));
@@ -86,7 +86,7 @@ STDMETHODIMP CObjectValuesParser::Parse(VARIANT *v, IVariantObject** ppVariantOb
 	CComPtr<IVariantTable> pVariantTable;
 	RETURN_IF_FAILED(HrWrapToVariantTable(pPluginManager, pVariantObject, pObjectCollection, &pVariantTable));
 	CComVariant vObjects(pVariantTable);
-	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_OBJECTS, &vObjects));
+	RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ObjectsObject, &vObjects));
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_RESULT, v));
 	return S_OK;
 }

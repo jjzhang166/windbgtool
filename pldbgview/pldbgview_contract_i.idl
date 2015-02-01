@@ -1,6 +1,6 @@
 import "oaidl.idl";
 import "ocidl.idl";
-import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\model-libs\ObjMdl\objmdl_contract_i.idl";
 import "..\pldbgcmds\pldbgcmds_contract_i.idl";
 
 interface IDebugSession;

@@ -71,21 +71,25 @@
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -358,7 +362,7 @@
       <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </ProxyFileName>
     </Midl>
-    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+    <Midl Include="..\model-libs\ObjMdl\objmdl_contract_i.idl">
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">objmdl_contract_i.h</HeaderFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">objmdl_contract_i.c</InterfaceIdentifierFileName>
       <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

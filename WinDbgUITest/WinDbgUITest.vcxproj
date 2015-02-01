@@ -68,20 +68,24 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\WTL90_4140_Final\Include;..\model-libs\objmdl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\WTL90_4140_Final\Include;..\model-libs\objmdl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\WTL90_4140_Final\Include;..\model-libs\objmdl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>C:\_dev\WinDbgTool\AnalyzeRuleSet.ruleset</CodeAnalysisRuleSet>
+    <IncludePath>..\model-libs\WTL90_4140_Final\Include;..\model-libs\objmdl;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -288,7 +292,7 @@
     <Image Include="res\WinDbgUITest1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+    <Midl Include="..\model-libs\ObjMdl\objmdl_contract_i.idl">
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">objmdl_contract_i.h</HeaderFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">objmdl_contract_i.c</InterfaceIdentifierFileName>
       <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -306,7 +310,7 @@
       <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </ProxyFileName>
     </Midl>
-    <Midl Include="..\ViewMdl\viewmdl_contract_i.idl">
+    <Midl Include="..\model-libs\ViewMdl\viewmdl_contract_i.idl">
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">viewmdl_contract_i.h</HeaderFileName>
       <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">viewmdl_contract_i.c</InterfaceIdentifierFileName>
       <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

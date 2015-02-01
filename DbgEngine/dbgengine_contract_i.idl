@@ -1,7 +1,7 @@
 import "oaidl.idl";
 import "ocidl.idl";
 import "ObjectArray.idl";
-import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\model-libs\ObjMdl\objmdl_contract_i.idl";
 
 interface IVariantObject;
 interface IDebugCommand;

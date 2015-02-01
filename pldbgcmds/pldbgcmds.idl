@@ -6,7 +6,7 @@
 
 import "oaidl.idl";
 import "ocidl.idl";
-import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\model-libs\ObjMdl\objmdl_contract_i.idl";
 import "..\DbgEngine\dbgengine_contract_i.idl";
 import "pldbgcmds_contract_i.idl";
 

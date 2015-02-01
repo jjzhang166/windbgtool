@@ -120,7 +120,7 @@
     <Midl Include="dbgengine_contract_i.idl">
       <Filter>Include</Filter>
     </Midl>
-    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+    <Midl Include="..\model-libs\ObjMdl\objmdl_contract_i.idl">
       <Filter>Source Files</Filter>
     </Midl>
   </ItemGroup>

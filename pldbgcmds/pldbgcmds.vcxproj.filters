@@ -138,10 +138,10 @@
     <Midl Include="pldbgcmds_contract_i.idl">
       <Filter>Include</Filter>
     </Midl>
-    <Midl Include="..\ObjMdl\objmdl_contract_i.idl">
+    <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
       <Filter>Source Files</Filter>
     </Midl>
-    <Midl Include="..\DbgEngine\dbgengine_contract_i.idl">
+    <Midl Include="..\model-libs\ObjMdl\objmdl_contract_i.idl">
       <Filter>Source Files</Filter>
     </Midl>
   </ItemGroup>

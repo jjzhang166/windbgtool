@@ -40,14 +40,18 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 
 		CComPtr<IVariantObject> pAboutPluginInfo;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pAboutPluginInfo));
-		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(VAR_GUID_NAMESPACE, &CComVariant(PNAMESP_HOSTFORM)));
-		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(VAR_GUID_TYPE, &CComVariant(PVIEWTYPE_COMMAND)));
-		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(VAR_GUID_ID, &CComVariant(COMMAND_ABOUT)));
-		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(VAR_GUID_CLSID, &CComVariant(CLSID_AboutCommand)));
+		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(ObjectModel::Metadata::Plugins::Object::Namespace, &CComVariant(PNAMESP_HOSTFORM)));
+		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(ObjectModel::Metadata::Plugins::Object::Type, &CComVariant(PVIEWTYPE_COMMAND)));
+		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(ObjectModel::Metadata::Plugins::Object::Id, &CComVariant(COMMAND_ABOUT)));
+		RETURN_IF_FAILED(pAboutPluginInfo->SetVariantValue(ObjectModel::Metadata::Plugins::Object::Clsid, &CComVariant(CLSID_AboutCommand)));
 		RETURN_IF_FAILED(pPluginManager->RegisterPluginInfo2(pAboutPluginInfo));
 
 		CComPtr<IMainWindow> pWindow;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_MainFrame, IID_IMainWindow, (LPVOID*)&pWindow));
+
+		CComPtr<ITabbedControl> pTabbedControl;
+		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_TabbedControl, IID_ITabbedControl, (LPVOID*)&pTabbedControl));
+		RETURN_IF_FAILED(pWindow->SetContainerControl(pTabbedControl));
 
 		CIcon icon;
 		icon.LoadIcon(IDR_MAINFRAME);

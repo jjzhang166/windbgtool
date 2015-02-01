@@ -2,7 +2,7 @@
 
 #include "Plugins.h"
 #include "..\DbgEngine\Plugins.h"
-#include "..\ObjMdl\\PluginTableBase.h"
+#include "..\model-libs\ObjMdl\\PluginTableBase.h"
 
 using namespace ATL;
 

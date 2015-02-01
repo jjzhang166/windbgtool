@@ -30,13 +30,17 @@ extern CAppModule _Module;
 #include <list>
 
 #include <initguid.h>
-#include "..\ViewMdl\Plugins.h"
-#include "..\ObjMdl\Macros.h"
-#include "..\ObjMdl\Plugins.h"
-#include "..\ObjMdl\ManualComObjectLoader.h"
+#include "..\model-libs\ViewMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Macros.h"
+#include "..\model-libs\ObjMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Metadata.h"
+#include "..\model-libs\ObjMdl\ManualComObjectLoader.h"
 
 #include "resource.h"
 #include "MessageLoopWrapper.h"
+
+using namespace IP;
 
 #if defined _M_IX86
   #pragma comment(linker, "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")

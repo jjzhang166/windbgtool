@@ -6,9 +6,9 @@
 
 import "oaidl.idl";
 import "ocidl.idl";
-import "..\ObjMdl\objmdl_contract_i.idl";
+import "..\model-libs\ObjMdl\objmdl_contract_i.idl";
 import "..\DbgEngine\dbgengine_contract_i.idl";
-import "..\ViewMdl\viewmdl_contract_i.idl";
+import "..\model-libs\ViewMdl\viewmdl_contract_i.idl";
 import "..\pldbgcmds\pldbgcmds_contract_i.idl";
 import "..\pldbgview\pldbgview_contract_i.idl";
 

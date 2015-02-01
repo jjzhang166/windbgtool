@@ -43,12 +43,15 @@ using namespace ATL;
 #include <boost\algorithm\string.hpp>
 
 #include <initguid.h>
-#include "..\ObjMdl\Macros.h"
-#include "..\ObjMdl\Plugins.h"
-#include "..\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Macros.h"
+#include "..\model-libs\ObjMdl\Plugins.h"
+#include "..\model-libs\ObjMdl\Functions.h"
+#include "..\model-libs\ObjMdl\Metadata.h"
 #include "..\DbgEngine\Plugins.h"
 #include "..\pldbgcmds\Plugins.h"
 #include "Plugins.h"
 
-HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObject, CString strKey, CString strName, VARTYPE vt = VT_BSTR, int iWidth = LVSCW_AUTOSIZE);
-HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVariantObject, IObjectCollection* pObjectCollection, IVariantTable** ppVariantTable);
+using namespace IP;
+
+HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObject, CComBSTR bstrKey, CString strName, VARTYPE vt = VT_BSTR, int iWidth = LVSCW_AUTOSIZE);
+HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVariantObject, IObjCollection* pObjectCollection, IVariantTable** ppVariantTable);

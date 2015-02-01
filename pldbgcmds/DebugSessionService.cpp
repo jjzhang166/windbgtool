@@ -163,9 +163,9 @@ STDMETHODIMP CDebugSessionService::ExecuteCommandSimple(REFIID iidCommand, VARIA
 					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(VAR_COMMAND_NAME, &v1));
 					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(VAR_NAME, &v1));
 				}
-				if (pSourceVariantObject->GetVariantValue(VAR_GUID_ID, &v1) == S_OK)
+				if (pSourceVariantObject->GetVariantValue(ObjectModel::Metadata::Plugins::Object::Id, &v1) == S_OK)
 				{
-					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(VAR_ID, &v1));
+					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(Metadata::Plugins::Object::Id, &v1));
 				}
 			}
 		}

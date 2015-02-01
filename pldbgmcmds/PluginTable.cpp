@@ -1,36 +1,36 @@
 #include "stdafx.h"
 #include "PluginTable.h"
 
-HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObject, CString strKey, CString strName, VARTYPE vt, int iWidth)
+HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObject, CComBSTR bstrKey, CString strName, VARTYPE vt, int iWidth)
 {
 	if(!pVariantObject)
 		return E_POINTER;
 
 	CComVariant v;
-	CComPtr<IObjectCollection> pObjectCollectionColumns;
-	RETURN_IF_FAILED(pVariantObject->GetVariantValue(VAR_COLUMNS, &v));
+	CComPtr<IObjCollection> pObjectCollectionColumns;
+	RETURN_IF_FAILED(pVariantObject->GetVariantValue(ObjectModel::Metadata::TableObject::ColumnsObject, &v));
 	if(v.vt == VT_EMPTY)
 	{
-		RETURN_IF_FAILED(CoCreateInstance(CLSID_EnumerableObjectCollection, NULL, CLSCTX_INPROC_SERVER, IID_IObjectCollection, (LPVOID*)&pObjectCollectionColumns));
+		RETURN_IF_FAILED(HrCoCreateInstance(CLSID_ObjectCollection, &pObjectCollectionColumns));
 		v = pObjectCollectionColumns;
-		RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_COLUMNS, &v));
+		RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ColumnsObject, &v));
 	}
 	else
 	{
-		RETURN_IF_FAILED(v.punkVal->QueryInterface(IID_IObjectCollection, (LPVOID*)&pObjectCollectionColumns));
+		RETURN_IF_FAILED(v.punkVal->QueryInterface(IID_IObjCollection, (LPVOID*)&pObjectCollectionColumns));
 	}
 
 	CComPtr<IVariantObject> pVariantObjectColumn;
 	RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pVariantObjectColumn));
 	pObjectCollectionColumns->AddObject(pVariantObjectColumn);
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(VAR_COLUMN_NAME, &CComVariant(strName)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(VAR_COLUMN_KEY, &CComVariant(strKey)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(VAR_COLUMN_TYPE, &CComVariant(vt)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(VAR_COLUMN_WIDTH, &CComVariant(iWidth)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Name, &CComVariant(strName)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Key, &CComVariant(bstrKey)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Type, &CComVariant(vt)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Width, &CComVariant(iWidth)));
 	return S_OK;
 }
 
-HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVariantObject, IObjectCollection* pObjectCollection, IVariantTable** ppVariantTable)
+HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVariantObject, IObjCollection* pObjectCollection, IVariantTable** ppVariantTable)
 {
 	if(!pObjectCollection)
 		return E_POINTER;
@@ -38,11 +38,11 @@ HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVa
 		return E_POINTER;
 
 	CComVariant v;
-	CComPtr<IObjectCollection> pObjectCollectionColumns;
-	RETURN_IF_FAILED(pVariantObject->GetVariantValue(VAR_COLUMNS, &v));
-	RETURN_IF_FAILED(v.punkVal->QueryInterface(IID_IObjectCollection, (LPVOID*)&pObjectCollectionColumns));
+	CComPtr<IObjCollection> pObjectCollectionColumns;
+	RETURN_IF_FAILED(pVariantObject->GetVariantValue(ObjectModel::Metadata::TableObject::ColumnsObject, &v));
+	RETURN_IF_FAILED(v.punkVal->QueryInterface(IID_IObjCollection, (LPVOID*)&pObjectCollectionColumns));
 
-	CComQIPtr<IObjectArray> pObjectArray = pObjectCollection;
+	CComQIPtr<IObjArray> pObjectArray = pObjectCollection;
 	if(!pObjectArray)
 		return E_NOINTERFACE;
 
