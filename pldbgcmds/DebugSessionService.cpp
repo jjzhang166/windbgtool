@@ -21,7 +21,7 @@ STDMETHODIMP CDebugSessionService::OpenDumpFile(BSTR bstrDumpFile)
 	{ //configure symbols
 		RETURN_IF_FAILED(ExecuteCommandSimple(DBGCOMMAND_SYMNOISY, NULL, NULL));
 
-		CString strPath = L"srv*c:\\symbols*http://msdl.microsoft.com/download/symbols"; //default symbols configuration
+		CString strPath = L"srv*%APPDATA%\\WinDbgTool\\Symbols*http://msdl.microsoft.com/download/symbols"; //default symbols configuration
 
 		DWORD dwSize = GetEnvironmentVariable(_T("_NT_SYMBOL_PATH"), NULL, 0);
 		if (dwSize)
