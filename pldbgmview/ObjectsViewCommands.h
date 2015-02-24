@@ -105,15 +105,19 @@ public:
 	{
 		UNREFERENCED_PARAMETER(guidCommand);
 		CHECK_E_POINTER(pbEnabled);
-		CComVariant vParam;
-		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(VAR_VT, &vParam));
-		if(vParam.vt == VT_BSTR)
+
+		if (m_pVariantObject)
 		{
-			*pbEnabled =  CComBSTR(vParam.bstrVal) == L"0";
-		}
-		else
-		{
-			*pbEnabled =  TRUE;
+			CComVariant vParam;
+			RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(VAR_VT, &vParam));
+			if (vParam.vt == VT_BSTR)
+			{
+				*pbEnabled = CComBSTR(vParam.bstrVal) == L"0";
+			}
+			else
+			{
+				*pbEnabled = TRUE;
+			}
 		}
 		return S_OK;
 	}
