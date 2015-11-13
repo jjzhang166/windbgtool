@@ -32,7 +32,7 @@ STDMETHODIMP CDebugSessionService::OpenDumpFile(BSTR bstrDumpFile)
 			strValue.ReleaseBuffer();
 			strPath = strValue;
 		}
-		RETURN_IF_FAILED(ExecuteCommandSimple(DBGCOMMAND_SYMPATH, &CComVariant(strPath), NULL));
+		RETURN_IF_FAILED(ExecuteCommandSimple(DBGCOMMAND_SYMPATH, &CComVar(strPath), NULL));
 	}
 
 	CComQIPtr<IDebugControl> pDebugControl = m_pDebugSession;
@@ -87,7 +87,7 @@ STDMETHODIMP CDebugSessionService::LoadDll(LPCTSTR lpszDllName)
 		return HRESULT_FROM_WIN32(GetLastError());
 
 	CComPtr<IVariantObject> pv4;
-	RETURN_IF_FAILED(ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVariant(lpszExePath), &pv4));
+	RETURN_IF_FAILED(ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVar(lpszExePath), &pv4));
 	strExePath.ReleaseBuffer();
 	return S_OK;
 }
@@ -157,7 +157,7 @@ STDMETHODIMP CDebugSessionService::ExecuteCommandSimple(REFIID iidCommand, VARIA
 			CComQIPtr<IVariantObject> pSourceVariantObject = pPluginInfo;
 			if (pSourceVariantObject)
 			{
-				CComVariant v1;
+				CComVar v1;
 				if (pSourceVariantObject->GetVariantValue(VAR_COMMAND_NAME, &v1) == S_OK)
 				{
 					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(VAR_COMMAND_NAME, &v1));

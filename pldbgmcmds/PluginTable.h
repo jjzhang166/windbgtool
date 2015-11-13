@@ -101,7 +101,7 @@ public:
 		CHECK_E_POINTER(key);
 		CComQIPtr<IVariantObject> pVariantObject =  (*m_infos.rbegin());
 		if(pVariantObject)
-			RETURN_IF_FAILED(pVariantObject->SetVariantValue(key, &CComVariant(lpw)));
+			RETURN_IF_FAILED(pVariantObject->SetVariantValue(key, &CComVar(lpw)));
 
 		return S_OK;
 	}

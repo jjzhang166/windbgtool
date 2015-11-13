@@ -79,7 +79,7 @@ STDMETHODIMP CDebugCommand::Execute(VARIANT* vParam, VARIANT* vResult)
 	if (FAILED(hr))
 		return hr;
 
-	CComVariant cv(m_strCommandResult);
+	CComVar cv(m_strCommandResult);
 	RETURN_IF_FAILED(cv.Detach(vResult));
 
 	return S_OK;

@@ -20,7 +20,7 @@ STDMETHODIMP CPluginDebugCommand::SetPluginInfo(IPluginInfo* pPluginInfo)
 	if(!pVariantObject)
 		return E_NOINTERFACE;
 
-	CComVariant v;
+	CComVar v;
 	HRESULT hr = pVariantObject->GetVariantValue(VAR_COMMAND_TEXT, &v);
 	if(FAILED(hr))
 		return hr;
@@ -43,7 +43,7 @@ STDMETHODIMP CPluginDebugCommand::Execute(VARIANT* vParam, IVariantObject** ppVa
 {
 	CComQIPtr<IDebugCommand> pDebugCommand = m_pDebugCommand;
 	ATLASSERT(pDebugCommand);
-	CComVariant vResult;
+	CComVar vResult;
 	RETURN_IF_FAILED(pDebugCommand->Execute(vParam, &vResult));
 
 	GUID iidCommand = {0};
@@ -68,7 +68,7 @@ STDMETHODIMP CPluginDebugCommand::Execute(VARIANT* vParam, IVariantObject** ppVa
 			CComQIPtr<IVariantObject> pSourceVariantObject = pPluginInfo;
 			if (pSourceVariantObject)
 			{
-				CComVariant v1;
+				CComVar v1;
 				if (pSourceVariantObject->GetVariantValue(VAR_COMMAND_TEXT, &v1) == S_OK)
 				{
 					RETURN_IF_FAILED((*ppVariantObject)->SetVariantValue(VAR_COMMAND_TEXT, &v1));

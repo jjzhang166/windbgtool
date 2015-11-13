@@ -146,7 +146,7 @@ HRESULT CViewDebugEngineService::ThreadProc()
 				CEventScope eventScope(m_hWnd);
 				if (cmdContext.m_pDebugCommand)
 				{
-					CComVariant vResult;
+					CComVar vResult;
 					HRESULT hr = cmdContext.m_pDebugCommand->Execute(NULL, &vResult);
 					if (FAILED(hr))
 					{

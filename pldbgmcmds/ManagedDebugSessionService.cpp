@@ -53,9 +53,9 @@ STDMETHODIMP CManagedDebugSessionService::OnAfterCommandExecute(REFGUID guidComm
 				if (PathFileExists(strMsCorDllPath) && PathFileExists(strSosDllPath))
 				{
 					CComPtr<IVariantObject> pv1;
-					RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVariant(strMsCorDllPath), &pv1));
+					RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVar(strMsCorDllPath), &pv1));
 					CComPtr<IVariantObject> pv2;
-					RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVariant(strSosDllPath), &pv2));
+					RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADDLL, &CComVar(strSosDllPath), &pv2));
 					bLoaded = true;
 				}
 			}
@@ -74,7 +74,7 @@ STDMETHODIMP CManagedDebugSessionService::OnAfterCommandExecute(REFGUID guidComm
 				RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_BstrCollection, IID_IBstrCollection, (LPVOID*)&pBstrCollection));
 				RETURN_IF_FAILED(pBstrCollection->AddItem(L"sos"));
 				RETURN_IF_FAILED(pBstrCollection->AddItem(L"clr"));
-				RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADBY, &CComVariant(pBstrCollection), NULL));
+				RETURN_IF_FAILED(m_pDebugSessionService->ExecuteCommandSimple(DBGCOMMAND_LOADBY, &CComVar(pBstrCollection), NULL));
 			}
 		}
 

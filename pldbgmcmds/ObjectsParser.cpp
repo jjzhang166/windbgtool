@@ -68,9 +68,9 @@ STDMETHODIMP CObjectsParser::Parse(VARIANT *v, IVariantObject** ppVariantObject)
 
 		CComPtr<IVariantObject> pVariantObjectValue;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pVariantObjectValue));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVariant(strAddress.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Key, &CComVariant(strMt.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Value, &CComVariant(strSize.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVar(strAddress.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Key, &CComVar(strMt.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Value, &CComVar(strSize.c_str())));
 		RETURN_IF_FAILED(pObjectCollection->AddObject(pVariantObjectValue));
 		nObjects++;
 	}
@@ -80,7 +80,7 @@ STDMETHODIMP CObjectsParser::Parse(VARIANT *v, IVariantObject** ppVariantObject)
 
 	CComPtr<IVariantTable> pVariantTable;
 	RETURN_IF_FAILED(HrWrapToVariantTable(pPluginManager, pVariantObject, pObjectCollection, &pVariantTable));
-	CComVariant vObjects(pVariantTable);
+	CComVar vObjects(pVariantTable);
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ObjectsObject, &vObjects));
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_RESULT, v));
 	return S_OK;

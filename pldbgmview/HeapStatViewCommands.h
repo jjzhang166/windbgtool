@@ -63,7 +63,7 @@ public:
 		if(gCmdId == GUID_NULL)
 			return E_NOTIMPL;
 
-		CComVariant vParam;
+		CComVar vParam;
 		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(ObjectModel::Metadata::Object::Id, &vParam));
 
 		CComPtr<IDebugFormManager> pDebugFormManager;

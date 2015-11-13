@@ -70,14 +70,14 @@ STDMETHODIMP CObjectValuesParser::Parse(VARIANT *v, IVariantObject** ppVariantOb
 		CComPtr<IVariantObject> pVariantObjectValue;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pVariantObjectValue));
 
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_MT, &CComVariant(strMt.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_FIELD, &CComVariant(strField.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_OFFSET, &CComVariant(strOffset.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_TYPE, &CComVariant(strType.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_VT, &CComVariant(strVt.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_ATTR, &CComVariant(strAttr.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVariant(strValue.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_NAME, &CComVariant(strName.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_MT, &CComVar(strMt.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_FIELD, &CComVar(strField.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_OFFSET, &CComVar(strOffset.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_TYPE, &CComVar(strType.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_VT, &CComVar(strVt.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_ATTR, &CComVar(strAttr.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVar(strValue.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_NAME, &CComVar(strName.c_str())));
 
 		RETURN_IF_FAILED(pObjectCollection->AddObject(pVariantObjectValue));
 		nObjects++;
@@ -85,7 +85,7 @@ STDMETHODIMP CObjectValuesParser::Parse(VARIANT *v, IVariantObject** ppVariantOb
 
 	CComPtr<IVariantTable> pVariantTable;
 	RETURN_IF_FAILED(HrWrapToVariantTable(pPluginManager, pVariantObject, pObjectCollection, &pVariantTable));
-	CComVariant vObjects(pVariantTable);
+	CComVar vObjects(pVariantTable);
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ObjectsObject, &vObjects));
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_RESULT, v));
 	return S_OK;

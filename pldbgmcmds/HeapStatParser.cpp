@@ -63,10 +63,10 @@ STDMETHODIMP CHeapStatParser::Parse(VARIANT *v, IVariantObject** ppVariantObject
 
 		CComPtr<IVariantObject> pVariantObjectValue;
 		RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pVariantObjectValue));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVariant(strId.c_str())));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_COUNT, &CComVariant(count)));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_TOTALSIZE, &CComVariant(totalSize)));
-		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_CLASSNAME, &CComVariant(strClassName.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(ObjectModel::Metadata::Object::Id, &CComVar(strId.c_str())));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_COUNT, &CComVar(count)));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_TOTALSIZE, &CComVar(totalSize)));
+		RETURN_IF_FAILED(pVariantObjectValue->SetVariantValue(VAR_CLASSNAME, &CComVar(strClassName.c_str())));
 		RETURN_IF_FAILED(pObjectCollection->AddObject(pVariantObjectValue));
 		nObjects++;
 	}
@@ -76,7 +76,7 @@ STDMETHODIMP CHeapStatParser::Parse(VARIANT *v, IVariantObject** ppVariantObject
 
 	CComPtr<IVariantTable> pVariantTable;
 	RETURN_IF_FAILED(HrWrapToVariantTable(pPluginManager, pVariantObject, pObjectCollection, &pVariantTable));
-	CComVariant vObjects(pVariantTable);
+	CComVar vObjects(pVariantTable);
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(ObjectModel::Metadata::TableObject::ObjectsObject, &vObjects));
 	RETURN_IF_FAILED(pVariantObject->SetVariantValue(VAR_RESULT, v));
 	return S_OK;

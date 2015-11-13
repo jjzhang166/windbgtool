@@ -59,7 +59,7 @@ public:
 		if(!pServiceProvider)
 			return E_NOINTERFACE;
 
-		CComVariant vParam;
+		CComVar vParam;
 		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(ObjectModel::Metadata::Object::Id, &vParam));
 
 		if (guidId == CMD_GCROOT)
@@ -108,7 +108,7 @@ public:
 
 		if (m_pVariantObject)
 		{
-			CComVariant vParam;
+			CComVar vParam;
 			RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(VAR_VT, &vParam));
 			if (vParam.vt == VT_BSTR)
 			{

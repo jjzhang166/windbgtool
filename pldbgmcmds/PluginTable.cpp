@@ -6,7 +6,7 @@ HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObje
 	if(!pVariantObject)
 		return E_POINTER;
 
-	CComVariant v;
+	CComVar v;
 	CComPtr<IObjCollection> pObjectCollectionColumns;
 	RETURN_IF_FAILED(pVariantObject->GetVariantValue(ObjectModel::Metadata::TableObject::ColumnsObject, &v));
 	if(v.vt == VT_EMPTY)
@@ -23,10 +23,10 @@ HRESULT HrAddColumn(IPluginManager* pPluginManager, IVariantObject* pVariantObje
 	CComPtr<IVariantObject> pVariantObjectColumn;
 	RETURN_IF_FAILED(pPluginManager->CoCreateInstance(CLSID_VariantObject, IID_IVariantObject, (LPVOID*)&pVariantObjectColumn));
 	pObjectCollectionColumns->AddObject(pVariantObjectColumn);
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Name, &CComVariant(strName)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Key, &CComVariant(bstrKey)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Type, &CComVariant(vt)));
-	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Width, &CComVariant(iWidth)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Name, &CComVar(strName)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Key, &CComVar(bstrKey)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Type, &CComVar(vt)));
+	RETURN_IF_FAILED(pVariantObjectColumn->SetVariantValue(ObjectModel::Metadata::Table::Column::Width, &CComVar(iWidth)));
 	return S_OK;
 }
 
@@ -37,7 +37,7 @@ HRESULT HrWrapToVariantTable(IPluginManager* pPluginManager, IVariantObject* pVa
 	if(!ppVariantTable)
 		return E_POINTER;
 
-	CComVariant v;
+	CComVar v;
 	CComPtr<IObjCollection> pObjectCollectionColumns;
 	RETURN_IF_FAILED(pVariantObject->GetVariantValue(ObjectModel::Metadata::TableObject::ColumnsObject, &v));
 	RETURN_IF_FAILED(v.punkVal->QueryInterface(IID_IObjCollection, (LPVOID*)&pObjectCollectionColumns));

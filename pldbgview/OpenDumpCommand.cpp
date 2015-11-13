@@ -38,7 +38,7 @@ STDMETHODIMP COpenDumpCommand::Invoke(REFGUID guidId)
 	RETURN_IF_FAILED(pConsoleService->OpenConsole());
 
 	ATLENSURE(pViewDebugEngineService);
-	RETURN_IF_FAILED(pViewDebugEngineService->ExecuteCommandSimpleAsync(DBGCOMMAND_OPENDUMP, &CComVariant(dlg.m_ofn.lpstrFile)));
+	RETURN_IF_FAILED(pViewDebugEngineService->ExecuteCommandSimpleAsync(DBGCOMMAND_OPENDUMP, &CComVar(dlg.m_ofn.lpstrFile)));
 	return S_OK;
 }
 

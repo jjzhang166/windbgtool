@@ -187,3 +187,4 @@
 /pldbgview/objmdl_contract_i.h
 /pldbgview/pldbgcmds_contract_i.h
 /pldbgview/viewmdl_contract_i.h
+/.vs/WinDbgTool/v14/*.suo
