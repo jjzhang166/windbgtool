@@ -7,7 +7,7 @@ public:
 	{
 		NMHDR hdr;
 		WPARAM wParam;
-		WPARAM lParam;
+		LPARAM lParam;
 	};
 
 	BEGIN_MSG_MAP(CEditEx)
@@ -22,7 +22,7 @@ public:
 		LPARAM lParam,
 		BOOL& /*bHandled*/)
 	{
-		NMKEYDOWN nm = {{m_hWnd, GetDlgCtrlID(), uMsg}, wParam, lParam};
+		NMKEYDOWN nm = {{m_hWnd, (UINT_PTR)GetDlgCtrlID(), uMsg}, wParam, lParam};
 		::SendMessage(GetParent(), WM_NOTIFY, (WPARAM)GetDlgCtrlID(), (LPARAM)&nm);
 		return DefWindowProc(uMsg, wParam, lParam);
 	}
