@@ -44,6 +44,8 @@ public:
 			*bstrText = CComBSTR(L"Values").Copy();
 		else if (guidId == CMD_GCROOT)
 			*bstrText = CComBSTR(L"Show roots").Copy();
+        else if (guidId == CMD_GCMROOT)
+            *bstrText = CComBSTR(L"Show mroots").Copy();
 		return S_OK;
 	}
 
@@ -62,7 +64,7 @@ public:
 		CComVar vParam;
 		RETURN_IF_FAILED(m_pVariantObject->GetVariantValue(ObjectModel::Metadata::Object::Id, &vParam));
 
-		if (guidId == CMD_GCROOT)
+		if (guidId == CMD_GCROOT || guidId == CMD_GCMROOT)
 		{
 			CWaitCursor w;
 
@@ -72,7 +74,14 @@ public:
 
 			CComPtr<IViewDebugEngineService> pViewDebugEngineService;
 			RETURN_IF_FAILED(pServiceProvider->QueryService(SERVICE_VIEW_DEBUG_SESSION_SERVICE, IID_IViewDebugEngineService, (LPVOID*)&pViewDebugEngineService));
-			RETURN_IF_FAILED(pViewDebugEngineService->ExecuteCommandSimpleAsync(DBGCOMMAND_GCROOT, &vParam));
+            if (guidId == CMD_GCROOT)
+            {
+                RETURN_IF_FAILED(pViewDebugEngineService->ExecuteCommandSimpleAsync(DBGCOMMAND_GCROOT, &vParam));
+            }
+            else if (guidId == CMD_GCMROOT)
+            {
+                RETURN_IF_FAILED(pViewDebugEngineService->ExecuteCommandSimpleAsync(DBGCOMMAND_GCMROOT, &vParam));
+            }
 
 			return S_OK;
 		}
@@ -98,6 +107,7 @@ public:
 		RETURN_IF_FAILED(pMenu->AddMenuCommand(GUID_NULL, CMD_OBJ_PROPS, this));
 		RETURN_IF_FAILED(pMenu->AddMenuCommand(GUID_NULL, CMD_OBJ_VALUES, this));
 		RETURN_IF_FAILED(pMenu->AddMenuCommand(GUID_NULL, CMD_GCROOT, this));
+        RETURN_IF_FAILED(pMenu->AddMenuCommand(GUID_NULL, CMD_GCMROOT, this));
 		return S_OK;
 	}
 

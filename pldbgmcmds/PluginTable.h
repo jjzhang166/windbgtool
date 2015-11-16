@@ -88,6 +88,11 @@ public:
 		RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_GCROOT]));
 		RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND_PARSER, DBGCOMMAND_GCROOT, CLSID_EmptyParser, _T("Show object roots debug command parser")));
 
+        RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND, DBGCOMMAND_GCMROOT, CLSID_PluginDebugCommand, _T("Show object mroots debug command")));
+        RETURN_IF_FAILED(SetText(VAR_COMMAND_TEXT, gs_commandTable[DBGCOMMAND_GCMROOT]));
+        RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_GCMROOT]));
+        RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND_PARSER, DBGCOMMAND_GCMROOT, CLSID_EmptyParser, _T("Show object mroots debug command parser")));
+
 		RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND, DBGCOMMAND_LOADBY, CLSID_PluginDebugCommand, _T("Loadby debug command")));
 		RETURN_IF_FAILED(SetText(VAR_COMMAND_TEXT, gs_commandTable[DBGCOMMAND_LOADBY]));
 		RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_LOADBY]));
@@ -136,7 +141,9 @@ public:
 		gs_commandNamesTable[DBGCOMMAND_THREADSINFO] = L"Threads";
 		gs_commandTable[DBGCOMMAND_GCROOT] = L"!gcroot %s";
 		gs_commandNamesTable[DBGCOMMAND_GCROOT] = L"GC roots";
-	}
+        gs_commandTable[DBGCOMMAND_GCMROOT] = L"!mroot %s";
+        gs_commandNamesTable[DBGCOMMAND_GCMROOT] = L"GC roots using sosex";
+    }
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(PluginTable), CPluginTable)
