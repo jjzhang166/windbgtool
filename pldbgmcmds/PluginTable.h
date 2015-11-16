@@ -93,6 +93,11 @@ public:
         RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_GCMROOT]));
         RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND_PARSER, DBGCOMMAND_GCMROOT, CLSID_EmptyParser, _T("Show object mroots debug command parser")));
 
+        RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND, DBGCOMMAND_BUILD_INDEX, CLSID_PluginDebugCommand, _T("Build sosex index debug command")));
+        RETURN_IF_FAILED(SetText(VAR_COMMAND_TEXT, gs_commandTable[DBGCOMMAND_BUILD_INDEX]));
+        RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_BUILD_INDEX]));
+        RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND_PARSER, DBGCOMMAND_BUILD_INDEX, CLSID_EmptyParser, _T("Build sosex index debug command parser")));
+
 		RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_DBGENGINE, PDBGTYPE_COMMAND, DBGCOMMAND_LOADBY, CLSID_PluginDebugCommand, _T("Loadby debug command")));
 		RETURN_IF_FAILED(SetText(VAR_COMMAND_TEXT, gs_commandTable[DBGCOMMAND_LOADBY]));
 		RETURN_IF_FAILED(SetText(VAR_COMMAND_NAME, gs_commandNamesTable[DBGCOMMAND_LOADBY]));
@@ -143,6 +148,8 @@ public:
 		gs_commandNamesTable[DBGCOMMAND_GCROOT] = L"GC roots";
         gs_commandTable[DBGCOMMAND_GCMROOT] = L"!mroot %s";
         gs_commandNamesTable[DBGCOMMAND_GCMROOT] = L"GC roots using sosex";
+        gs_commandTable[DBGCOMMAND_BUILD_INDEX] = L"!bhi";
+        gs_commandNamesTable[DBGCOMMAND_BUILD_INDEX] = L"Build sosex index";
     }
 };
 

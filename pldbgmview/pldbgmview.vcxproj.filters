@@ -91,6 +91,9 @@
     <ClCompile Include="viewmdl_contract_i.c">
       <Filter>Misc\Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="BuildIndexCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -152,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="viewmdl_contract_i.h">
       <Filter>Misc\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildIndexCommand.h">
+      <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

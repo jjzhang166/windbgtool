@@ -75,6 +75,13 @@ library pldbgmviewLib
 	{
 		[default] interface ICommand2;
 	};
+    [
+        uuid(D77653FB-8416-456A-ACBF-DBA5F5012078)
+    ]
+    coclass BuildIndexCommand
+    {
+        [default] interface ICommand2;
+    };
 	[
 		uuid(A6B31236-A02C-4473-8BFC-EA4D2689AB87)		
 	]

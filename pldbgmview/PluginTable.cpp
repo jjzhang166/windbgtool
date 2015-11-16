@@ -7,6 +7,7 @@ HRESULT CPluginTable::FinalConstruct()
 	RETURN_IF_FAILED(AddPluginInfo(PNAMESP_HOSTFORM, PVIEWTYPE_COMMAND, COMMAND_DOTNETINFO, CLSID_DotNetInfoCommand, _T("Dot net info view command")));
 	RETURN_IF_FAILED(AddPluginInfo(PNAMESP_HOSTFORM, PVIEWTYPE_COMMAND, COMMAND_HEAPSTAT, CLSID_HeapStatCommand, _T("Heap stat view command")));
 	RETURN_IF_FAILED(AddPluginInfo(PNAMESP_HOSTFORM, PVIEWTYPE_COMMAND, COMMAND_THREADS, CLSID_ThreadsCommand, _T("Threads info view command")));
+    RETURN_IF_FAILED(AddPluginInfo(PNAMESP_HOSTFORM, PVIEWTYPE_COMMAND, COMMAND_BUILD_INDEX, CLSID_BuildIndexCommand, _T("Build sosex index view command")));
 
 	RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_HOSTFORM, PVIEWTYPE_INPLACE_CONTROL, DBGCOMMAND_DOTNETINFO, CLSID_SimpleListView, _T("Dot net info command view form")));
 	RETURN_IF_FAILED(AddPluginInfoRemote(PNAMESP_HOSTFORM, PVIEWTYPE_INPLACE_CONTROL, DBGCOMMAND_HEAPSTAT, CLSID_SimpleListView, _T("Heap stat command view form")));

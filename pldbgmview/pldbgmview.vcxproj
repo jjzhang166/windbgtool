@@ -246,6 +246,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BuildIndexCommand.cpp" />
     <ClCompile Include="CommandsCommand.cpp" />
     <ClCompile Include="CommandStateService.cpp" />
     <ClCompile Include="dbgengine_contract_i.c">
@@ -331,6 +332,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuildIndexCommand.h" />
     <ClInclude Include="CommandsCommand.h" />
     <ClInclude Include="CommandStateService.h" />
     <ClInclude Include="dbgengine_contract_i.h" />
