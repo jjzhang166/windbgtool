@@ -333,6 +333,7 @@
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WinDbgUITest_i.h</HeaderFileName>
       <ValidateAllParameters Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ValidateAllParameters>
       <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WinDbgUITest_i.h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WinDbgUITest_i.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

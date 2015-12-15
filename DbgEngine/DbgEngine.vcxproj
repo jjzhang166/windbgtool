@@ -359,6 +359,10 @@
       </TypeLibraryName>
       <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </TypeLibraryName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dbgengine_contract_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dbgengine_contract_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ProxyFileName>
     </Midl>
     <Midl Include="DbgEngine.idl" />
   </ItemGroup>
